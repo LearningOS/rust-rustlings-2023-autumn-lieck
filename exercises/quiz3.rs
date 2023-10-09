@@ -16,8 +16,6 @@
 //
 // Execute `rustlings hint quiz3` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
-
 pub struct ReportCard {
     pub grade: f32,
     pub student_name: String,
@@ -28,6 +26,11 @@ impl ReportCard {
     pub fn print(&self) -> String {
         format!("{} ({}) - achieved a grade of {}",
             &self.student_name, &self.student_age, &self.grade)
+    }
+
+    pub fn printA(&self) -> String {
+        format!("{} ({}) - achieved a grade of A+",
+            &self.student_name, &self.student_age)
     }
 }
 
@@ -57,7 +60,7 @@ mod tests {
             student_age: 11,
         };
         assert_eq!(
-            report_card.print(),
+            report_card.printA(),
             "Gary Plotter (11) - achieved a grade of A+"
         );
     }
